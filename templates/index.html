@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Age Calculator</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="card">
+    <button id="theme" class="theme" aria-label="Toggle theme">🌙</button>
+    <h1>AI Age Calculator</h1>
+    <p class="sub">Exact age, fun facts and an ML-based life estimate</p>
+
+    <label for="dob">Date of birth</label>
+    <input type="date" id="dob">
+    <button id="calc" class="primary">Calculate</button>
+    <p id="error" class="error"></p>
+
+    <section id="result" hidden>
+      <div class="age">
+        <div><span id="years">0</span><small>Years</small></div>
+        <div><span id="months">0</span><small>Months</small></div>
+        <div><span id="days">0</span><small>Days</small></div>
+      </div>
+
+      <ul class="facts">
+        <li>📅 Born on a <b id="born"></b></li>
+        <li>⏳ Total days lived: <b id="total"></b></li>
+        <li>🎂 Next birthday in <b id="next"></b> days (<span id="nextday"></span>)</li>
+        <li>♈ Zodiac: <b id="zodiac"></b></li>
+        <li>👥 Generation: <b id="gen"></b></li>
+      </ul>
+
+      <div class="ml">
+        <h2>🤖 Average Life Expectancy</h2>
+        <p>Estimated remaining years: <b id="remaining"></b></p>
+        <div class="bar"><div id="fill"></div></div>
+        <small id="progress"></small>
+        <p class="note">Demo model trained on approximate sample data. Not a medical prediction.</p>
+      </div>
+    </section>
+  </main>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
